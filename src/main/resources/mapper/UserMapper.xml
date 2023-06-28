@@ -5,8 +5,7 @@
 <mapper namespace="com.green.refresh.user.UserMapper">
     <insert id="insUser">
         INSERT INTO t_user
-        SET iuser = #{iuser}
-            , nm = #{nm}
+        SET nm = #{nm}
             , gender = #{gender}
             , birth = #{birth}
             , pic = #{pic}
