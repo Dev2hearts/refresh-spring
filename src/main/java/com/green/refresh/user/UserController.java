@@ -15,7 +15,7 @@ public class UserController {
 
 
     @PostMapping
-    @Operation(summary = "회원가입", description = "" +
+    @Operation(summary = "유저 추가", description = "" +
             "nm: [10] 유저 닉네임,<br>" +
             "gender: [1] 성별(M: 남성, F: 여성),<br>" +
             "birth: [8] 생년월일<br>")
@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    @Operation(summary = "회원탈퇴", description = "" +
+    @Operation(summary = "유저 삭제", description = "" +
             "iuser: [-] 유저 PK값<br>" )
     public int deleteUser(@RequestParam int iuser) {
         return service.delUser(iuser);
