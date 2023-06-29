@@ -48,6 +48,12 @@ public class PdtService {
         return mapper.updPdt(dto);
     }
 
+    public int finishPdt(int iproduct) {
+        PdtEntity entity = new PdtEntity();
+        entity.setIproduct(iproduct);
+        return mapper.finishPdt(entity);
+    }
+
     public int delPdt(int iproduct) {
         PdtEntity entity = new PdtEntity();
         entity.setIproduct(iproduct);

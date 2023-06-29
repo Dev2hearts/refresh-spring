@@ -53,6 +53,14 @@ public class PdtController {
         return service.updPdt(dto);
     }
 
+    @PatchMapping("/pdt/finish")
+    @Operation(summary = "아이템 구매 완료/취소"
+            , description = "" +
+            "\"iproduct\": [-] 아이템 PK,<br>")
+    public int finishPdt(@RequestParam int iproduct){
+        return service.finishPdt(iproduct);
+    }
+
     @DeleteMapping("/pdt")
     @Operation(summary = "아이템 삭제"
             , description = "" +

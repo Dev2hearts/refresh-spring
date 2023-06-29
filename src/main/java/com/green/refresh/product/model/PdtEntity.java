@@ -13,5 +13,6 @@ public class PdtEntity {
     private String nm;
     private int cnt;
     private String buyAt;
+    private int finishYn;
     private int delYn;
 }

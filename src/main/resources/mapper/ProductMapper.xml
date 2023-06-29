@@ -14,7 +14,7 @@
     </insert>
 
     <select id="selPdt" resultType="PdtSelVo">
-        SELECT A.icate, A.iunit, A.w_iuser wIuser, A.nm, A.cnt, A.del_yn delYn
+        SELECT A.icate, A.iproduct, A.iunit, A.w_iuser wIuser, A.nm, A.cnt, A.finish_yn finishYn
         FROM t_product A
         JOIN t_plan B
         ON A.iplan = B.iplan
@@ -32,12 +32,18 @@
         WHERE iproduct = #{iproduct}
     </update>
 
-    <update id="delPdt">
-        <selectKey keyProperty="delYn" resultType="PdtEntity" order="AFTER">
-            SELECT del_yn delYn FROM t_product WHERE iproduct = #{iproduct}
+    <update id="finishPdt">
+        <selectKey keyProperty="finishYn" resultType="PdtEntity" order="AFTER">
+            SELECT finish_yn finishYn FROM t_product WHERE iproduct = #{iproduct}
         </selectKey>
         UPDATE t_product
-        SET del_yn = 1 - del_yn
+        SET finish_yn = 1 - finish_yn
+        WHERE iproduct = #{iproduct}
+    </update>
+
+    <update id="delPdt">
+        UPDATE t_product
+        SET del_yn = 1
         WHERE iproduct = #{iproduct}
     </update>
 
