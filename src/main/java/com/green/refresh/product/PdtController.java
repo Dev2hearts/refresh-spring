@@ -1,0 +1,47 @@
+package com.green.refresh.product;
+
+import com.green.refresh.product.model.PdtInsDto;
+import com.green.refresh.product.model.PdtSelVo;
+import com.green.refresh.product.model.PdtUpdDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+@RestController
+@Tag(name="장보기 일정관리",description = "item")
+@RequestMapping("/refresh")
+@RequiredArgsConstructor
+public class PdtController {
+    private final PdtService service;
+
+    @PostMapping("pdt")
+    @Operation(summary = "아이템 추가"
+            , description = "" +
+            "\"iplan\": [-] 회원 그룹PK,<br>" +
+            "\"icate\": [8] 일정 날짜,<br>" +
+            "\"iunit\": [1] 단위,<br>" +
+            "\"nm\": [20] 제품명,<br>" +
+            "\"cnt\": [-] 수량,<br>" +
+            "\"b_iuser\": [1] 단위,<br>")
+    public int insPdt(@RequestBody PdtInsDto dto) {
+        return service.insPdt(dto);
+    }
+
+    @GetMapping("pdt")
+    @Operation(summary = "아이템 리스트"
+            , description = "" +
+            "\"igroup\": [-] 회원 그룹PK,<br>" +
+            "\"createdAt\": [8] 일정 날짜,<br>")
+    public List<PdtSelVo> selPdt(@RequestParam int igroup, @RequestParam int createdAt) {
+        return service.selPdt(igroup, createdAt);
+    }
+
+    @PatchMapping("pdt")
+    public int patchPdt(@RequestBody PdtUpdDto dto) {
+        return service.updPdt(dto);
+    }
+}

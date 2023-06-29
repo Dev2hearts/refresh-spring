@@ -3,7 +3,7 @@ package com.green.refresh.product.model;
 import lombok.Data;
 
 @Data
-public class ProductInsDto {
+public class PdtInsDto {
     private int iplan;
     private int icate;
     private int iunit;
