@@ -22,11 +22,11 @@ public class PdtController {
     @Operation(summary = "아이템 추가"
             , description = "" +
             "\"iplan\": [-] 그룹PK,<br>" +
-            "\"icate\": [8] 일정 날짜,<br>" +
+            "\"icate\": [-] 카테고리,<br>" +
             "\"iunit\": [1] 단위,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량,<br>" +
-            "\"w_iuser\": [1] 작성자 - 유저 PK,<br>")
+            "\"w_iuser\": [1] 작성자 - 유저 PK<br>")
     public int insPdt(@RequestBody PdtInsDto dto) {
         return service.insPdt(dto);
     }
@@ -35,7 +35,7 @@ public class PdtController {
     @Operation(summary = "아이템 리스트"
             , description = "" +
             "\"igroup\": [-] 그룹PK,<br>" +
-            "\"createdAt\": [8] 일정 날짜,<br>")
+            "\"createdAt\": [8] 일정 날짜<br>")
     public List<PdtSelVo> selPdt(@RequestParam int igroup, @RequestParam int createdAt) {
         return service.selPdt(igroup, createdAt);
     }
@@ -45,10 +45,10 @@ public class PdtController {
             , description = "" +
             "\"iplan\": [-] 그룹 PK,<br>" +
             "\"iproduct\": [-] 아이템 PK,<br>" +
-            "\"icate\": [8] 일정 날짜,<br>" +
+            "\"icate\": [-] 카테고리,<br>" +
             "\"iunit\": [1] 단위,<br>" +
             "\"nm\": [20] 제품명,<br>" +
-            "\"cnt\": [-] 수량,<br>")
+            "\"cnt\": [-] 수량<br>")
     public int patchPdt(@RequestBody PdtUpdDto dto) {
         return service.updPdt(dto);
     }
