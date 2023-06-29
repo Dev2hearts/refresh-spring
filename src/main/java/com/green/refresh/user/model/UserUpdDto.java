@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public class UserUpdDto {
     private String nm;
-    private char gender;
     private String birth;
 }
 

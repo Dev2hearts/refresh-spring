@@ -16,11 +16,6 @@ public class UserService {
     }
 
     public int insUser(UserInsDto dto) {
-        char gender = Character.toUpperCase(dto.getGender());
-        if(!(gender == 'M' || gender =='F')) {
-            return -1;
-        }
-        dto.setGender(gender);
         return mapper.insUser(dto);
     }
 

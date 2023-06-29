@@ -6,7 +6,6 @@
     <insert id="insUser">
         INSERT INTO t_user
         SET nm = #{nm}
-            , gender = #{gender}
             , birth = #{birth}
             , pic = #{pic}
     </insert>
