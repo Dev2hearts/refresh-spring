@@ -11,4 +11,5 @@ public interface PdtMapper {
     //    List<PdtSelVo> selPdt(PdtSelDto dto);
     List<PdtSelVo> selPdt(PdtSelDto dto);
     int updPdt(PdtUpdDto dto);
+    int delPdt(PdtEntity entity);
 }

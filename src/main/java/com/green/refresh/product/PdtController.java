@@ -18,7 +18,7 @@ import java.util.List;
 public class PdtController {
     private final PdtService service;
 
-    @PostMapping("pdt")
+    @PostMapping("/pdt")
     @Operation(summary = "아이템 추가"
             , description = "" +
             "\"iplan\": [-] 그룹PK,<br>" +
@@ -31,7 +31,7 @@ public class PdtController {
         return service.insPdt(dto);
     }
 
-    @GetMapping("pdt")
+    @GetMapping("/pdt")
     @Operation(summary = "아이템 리스트"
             , description = "" +
             "\"igroup\": [-] 그룹PK,<br>" +
@@ -40,7 +40,7 @@ public class PdtController {
         return service.selPdt(igroup, createdAt);
     }
 
-    @PatchMapping("pdt")
+    @PatchMapping("/pdt")
     @Operation(summary = "아이템 수정"
             , description = "" +
             "\"iplan\": [-] 그룹 PK,<br>" +
@@ -51,5 +51,13 @@ public class PdtController {
             "\"cnt\": [-] 수량<br>")
     public int patchPdt(@RequestBody PdtUpdDto dto) {
         return service.updPdt(dto);
+    }
+
+    @DeleteMapping("/pdt")
+    @Operation(summary = "아이템 삭제"
+            , description = "" +
+            "\"iproduct\": [-] 아이템 PK,<br>")
+    public int delPdt(@RequestParam int iproduct){
+        return service.delPdt(iproduct);
     }
 }

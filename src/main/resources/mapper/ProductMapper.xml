@@ -20,6 +20,7 @@
         ON A.iplan = B.iplan
         WHERE igroup = #{igroup}
         AND created_at = #{createdAt}
+        AND A.del_yn = 0
     </select>
 
     <update id="updPdt">
@@ -38,7 +39,6 @@
         UPDATE t_product
         SET del_yn = 1 - del_yn
         WHERE iproduct = #{iproduct}
-
     </update>
 
 
