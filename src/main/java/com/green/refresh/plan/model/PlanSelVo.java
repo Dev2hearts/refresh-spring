@@ -8,4 +8,5 @@ public class PlanSelVo {
     private int igroup;
     private String title;
     private String createdAt;
+    private int delYn;
 }
