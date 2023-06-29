@@ -9,4 +9,28 @@
             , birth = #{birth}
             , pic = #{pic}
     </insert>
+
+
+    <select id="selUser">
+        SELECT iuser, nm, gender, birth, pic
+        FROM t_user
+        WHERE del_yn = 0
+        AND iuser = #{iuser}
+    </select>
+
+
+    <update id="updUser">
+        UPDATE t_user
+        SET nm = #{nm}
+        , gender = #{gender}
+        , birth = #{birth}
+        WHERE iuser = #{iuser}
+    </update>
+
+
+    <update id="delUser">
+        UPDATE t_user
+        SET del_yn = 1
+        WHERE iuser = #{iuser}
+    </update>
 </mapper>
