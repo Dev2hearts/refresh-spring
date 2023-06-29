@@ -3,6 +3,7 @@ package com.green.refresh.plan;
 import com.green.refresh.plan.model.PlanInsDto;
 import com.green.refresh.plan.model.PlanUpdDto;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@Tag(name ="일정")
 @RequestMapping("/refresh/plan")
 @RequiredArgsConstructor
 public class PlanController {
