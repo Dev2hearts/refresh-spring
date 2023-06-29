@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class PdtSelDto {
     private int igroup;
-    private int createdAt;
+    private String createdAt;
 }
 

@@ -31,6 +31,16 @@
         WHERE iproduct = #{iproduct}
     </update>
 
+    <update id="delPdt">
+        <selectKey keyProperty="delYn" resultType="PdtEntity" order="AFTER">
+            SELECT del_yn delYn FROM t_product WHERE iproduct = #{iproduct}
+        </selectKey>
+        UPDATE t_product
+        SET del_yn = 1 - del_yn
+        WHERE iproduct = #{iproduct}
+
+    </update>
+
 
 
 </mapper>
