@@ -45,9 +45,8 @@ public class PlanController {
     }
 
     @DeleteMapping("/{iplan}")
-    @Operation(summary = "일정삭제", description = "{</br>" +
-            "  \"iplan\": 삭제할 PK값 </br>" +
-            "}")
+    @Operation(summary = "일정삭제", description =
+            "  \"iplan\": 삭제할 PK값 " )
     public int delPlan(@RequestParam int iplan) {
         return service.delPlan(iplan);
     }
