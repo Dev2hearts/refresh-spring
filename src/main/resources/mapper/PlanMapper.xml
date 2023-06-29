@@ -11,6 +11,11 @@
         , created_at = #{createdAt}
     </insert>
 
+    <select id="selPlan">
+        SELECT iplan, igroup, title, created_at createdAt
+        FROM t_plan
+    </select>
+
     <update id="updPlan">
         UPDATE t_plan
         SET title = #{title}

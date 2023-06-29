@@ -1,6 +1,7 @@
 package com.green.refresh.plan;
 
 import com.green.refresh.plan.model.PlanInsDto;
+import com.green.refresh.plan.model.PlanSelVo;
 import com.green.refresh.plan.model.PlanUpdDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -9,6 +10,8 @@ import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -38,6 +41,16 @@ public class PlanController {
     public int postPlan(@RequestBody PlanInsDto dto) {
         return service.insPlan(dto);
     }
+
+
+    @GetMapping
+    @Operation(summary = "일정 리스트")
+    public List<PlanSelVo> getPlan() {
+        return service.selPlan();
+    }
+
+
+
 
     @PutMapping("/{iplan}")
     @Operation(summary = "일정수정", description =
