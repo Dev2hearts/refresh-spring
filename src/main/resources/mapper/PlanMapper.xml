@@ -6,8 +6,22 @@
     <insert id="insPlan">
         INSERT INTO t_plan
         SET igroup = #{igroup}
+        , iuser = #{iuser}
         , title = #{title}
         , created_at = current_timestamp
     </insert>
+
+    <update id="updPlan">
+        UPDATE t_plan
+        SET title = #{title}
+        WHERE iplan = #{iplan}
+    </update>
+
+    <update id="delPlan">
+        UPDATE t_plan
+        SET del_yn = 1
+        WHERE iplan = #{iplan}
+    </update>
+
 
 </mapper>
