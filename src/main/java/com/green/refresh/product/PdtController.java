@@ -35,7 +35,7 @@ public class PdtController {
     @Operation(summary = "아이템 리스트"
             , description = "" +
             "\"igroup\": [-] 그룹PK,<br>" +
-            "\"createdAt\": [8] 일정 날짜<br>")
+            "\"createdAt\": [10] 일정 날짜<br>")
     public List<PdtSelVo> selPdt(@RequestParam int igroup, @RequestParam int createdAt) {
         return service.selPdt(igroup, createdAt);
     }

@@ -32,8 +32,8 @@ public class PlanController {
             "  \"igroup\": [-] PK값,</br>" +
             "  \"iuser\": [-] PK값,</br>" +
             "  \"title\": [20] 일정 제목 입력,</br>" +
-            " \"created_at \" : \" [8] 해당 날짜 입력 ex) 20230707</br>" +
-                    " 대시 - 나 콤마 . 사용 불가 "
+            " \"created_at \" : \" [10] 해당 날짜 입력 ex)2023-07-07</br>"
+
             )
     public int postPlan(@RequestBody PlanInsDto dto) {
         return service.insPlan(dto);
