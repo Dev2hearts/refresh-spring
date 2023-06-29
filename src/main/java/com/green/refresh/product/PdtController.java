@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@Tag(name="장보기 일정관리",description = "item")
+@Tag(name="장보기 일정관리")
 @RequestMapping("/refresh")
 @RequiredArgsConstructor
 public class PdtController {
