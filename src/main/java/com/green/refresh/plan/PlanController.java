@@ -26,27 +26,29 @@ public class PlanController {
     }
 
     @PostMapping
-    @Operation(summary = "일정등록", description = "{</br>" +
-            "  \"igroup\": PK값,</br>" +
-            "  \"iuser\": PK값,</br>" +
-            "  \"title\": \"일정 제목 입력\"</br>" +
-            "}")
+    @Operation(summary = "일정등록", description =
+            "  \"igroup\": [-] PK값,</br>" +
+            "  \"iuser\": [-] PK값,</br>" +
+            "  \"title\": [20] 일정 제목 입력,</br>" +
+            " \"created_at \" : \" [8] 해당 날짜 입력 ex) 20230707</br>" +
+                    " 대시 - 나 콤마 . 사용 불가 "
+            )
     public int postPlan(@RequestBody PlanInsDto dto) {
         return service.insPlan(dto);
     }
 
     @PutMapping("/{iplan}")
-    @Operation(summary = "일정수정", description = "{ </br>" +
-            "  \"iplan\": 수정할 PK값, </br>" +
-            "  \"title\": \"제목 수정할 내용 입력\" </br>" +
-            "}")
+    @Operation(summary = "일정수정", description =
+            "  \"iplan\": [-] 수정할 PK값, </br>" +
+            "  \"title\": \" [20] 제목 수정할 내용 입력\" "
+            )
     public int putPlan(@RequestBody PlanUpdDto dto) {
         return service.updPlan(dto);
     }
 
     @DeleteMapping("/{iplan}")
     @Operation(summary = "일정삭제", description =
-            "  \"iplan\": 삭제할 PK값 " )
+            "  \"iplan\": [-] 삭제할 PK값 " )
     public int delPlan(@RequestParam int iplan) {
         return service.delPlan(iplan);
     }
