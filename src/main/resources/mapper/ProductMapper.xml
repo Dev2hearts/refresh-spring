@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.refresh.product.ProductMapper">
+<mapper namespace="com.green.refresh.product.PdtMapper">
     <insert id="insPdt">
         INSERT INTO t_product
         SET iplan = #{iplan}
@@ -13,8 +13,24 @@
         , cnt = #{cnt}
     </insert>
 
-    <select id="selPdt">
-
+    <select id="selPdt" resultType="PdtSelVo">
+        SELECT A.icate, A.iunit, A.w_iuser wIuser, A.nm, A.cnt, A.del_yn delYn
+        FROM t_product A
+        JOIN t_plan B
+        ON A.iplan = B.iplan
+        WHERE igroup = #{igroup}
+        AND created_at = #{createdAt}
     </select>
+
+    <update id="updPdt">
+        UPDATE t_product
+        SET nm = #{nm}
+        , icate = #{icate}
+        , cnt = #{cnt}
+        , iunit = #{iunit}
+        WHERE iproduct = #{iproduct}
+    </update>
+
+
 
 </mapper>
