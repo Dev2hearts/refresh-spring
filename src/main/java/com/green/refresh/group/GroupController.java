@@ -18,15 +18,15 @@ public class GroupController {
     private final GroupService service;
 
     @GetMapping
-    @Operation(summary = "\"그룹\""
+    @Operation(summary = "그룹"
             , description = "" +
-            "\"igroup\": 그룹 PK, <br>")
+            "\"igroup\": 그룹 PK <br>")
     public List<GroupSelVo> selectGroup(@RequestParam int igroup) {
         return service.selGroup(igroup);
     }
 
     @GetMapping("/all")
-    @Operation(summary = "\"그룹 리스트\"")
+    @Operation(summary = "그룹 리스트")
     public List<GroupSelVo> selectAllGroup() {
         return service.selAllGroup();
     }
