@@ -37,6 +37,16 @@ public class UserController {
         return service.selUser(iuser);
     }
 
+    @GetMapping("/all")
+    @Operation(summary = "전체 유저 프로필"
+            , description = "" +
+            "nm: 유저 닉네임, <br>" +
+            "birth: 생년월일, <br>" +
+            "pic: 프로필 사진, <br>")
+    public List<UserSelVo> selectAllUser() {
+        return service.selAllUser();
+    }
+
 
 
     @PatchMapping

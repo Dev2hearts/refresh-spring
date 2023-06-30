@@ -12,10 +12,16 @@
 
 
     <select id="selUser">
-        SELECT iuser, nm, gender, birth, pic
+        SELECT iuser, nm, birth, pic
         FROM t_user
         WHERE del_yn = 0
         AND iuser = #{iuser}
+    </select>
+
+    <select id="selAllUser">
+        SELECT iuser, nm, birth, pic
+        FROM t_user
+        WHERE del_yn = 0
     </select>
 
 

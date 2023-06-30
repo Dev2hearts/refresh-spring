@@ -26,6 +26,10 @@ public class UserService {
         return mapper.selUser(dto);
     }
 
+    public List<UserSelVo> selAllUser() {
+        return mapper.selAllUser();
+    }
+
 
     public int updUser(UserUpdDto dto) {
         return mapper.updUser(dto);
