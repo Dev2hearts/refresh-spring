@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @Tag(name ="유저")
-@RequestMapping("/refresh/user")
+@RequestMapping("/api/refresh/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService service;
