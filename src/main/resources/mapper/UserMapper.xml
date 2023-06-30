@@ -19,7 +19,7 @@
         INNER JOIN t_group C
         ON B.igroup = C.igroup
         WHERE del_yn = 0
-        AND iuser = #{iuser}
+        AND A.iuser = #{iuser}
         ORDER BY iuser
     </select>
 

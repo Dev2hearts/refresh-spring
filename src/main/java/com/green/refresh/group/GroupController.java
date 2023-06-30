@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @Tag(name ="그룹")
-@RequestMapping("/refresh/group")
+@RequestMapping("/api/refresh/group")
 @RequiredArgsConstructor
 public class GroupController {
     private final GroupService service;
