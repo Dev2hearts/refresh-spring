@@ -28,7 +28,6 @@
     <update id="updUser">
         UPDATE t_user
         SET nm = #{nm}
-        , gender = #{gender}
         , birth = #{birth}
         WHERE iuser = #{iuser}
     </update>
