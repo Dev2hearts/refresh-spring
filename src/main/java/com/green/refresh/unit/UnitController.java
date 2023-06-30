@@ -16,7 +16,7 @@ import java.util.List;
 @Tag(name ="단위 리스트")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/refresh/unit")
+@RequestMapping("/api/refresh/unit")
 public class UnitController {
 
     private final UnitService service;

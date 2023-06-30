@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @Tag(name="아이템")
-@RequestMapping("/refresh")
+@RequestMapping("/api/refresh")
 @RequiredArgsConstructor
 public class PdtController {
     private final PdtService service;

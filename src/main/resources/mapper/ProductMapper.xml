@@ -7,10 +7,10 @@
         INSERT INTO t_product
         SET iplan = #{iplan}
         , icate = #{icate}
-        , iunit = #{iunit}
-        , w_iuser = #{wIuser}
         , nm = #{nm}
         , cnt = #{cnt}
+        , iunit = #{iunit}
+        , w_iuser = #{wIuser}
     </insert>
 
     <select id="selPdt" resultType="PdtSelVo">
