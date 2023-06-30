@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class PdtSelVo {
-    private int icate;
     private int iproduct;
-    private int iunit;
-    private int wIuser;
+    private int icate;
     private String nm;
+    private int iunit;
     private int cnt;
+    private int wIuser;
     private int finishYn;
 }
 

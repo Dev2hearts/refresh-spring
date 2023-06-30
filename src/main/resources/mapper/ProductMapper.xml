@@ -14,7 +14,7 @@
     </insert>
 
     <select id="selPdt" resultType="PdtSelVo">
-        SELECT A.icate, A.iproduct, A.iunit, A.w_iuser wIuser, A.nm, A.cnt, A.finish_yn finishYn
+        SELECT A.iproduct, A.icate, A.nm, A.cnt, A.iunit, A.w_iuser wIuser, A.finish_yn finishYn
         FROM t_product A
         JOIN t_plan B
         ON A.iplan = B.iplan
@@ -25,8 +25,9 @@
 
     <update id="updPdt">
         UPDATE t_product
-        SET nm = #{nm}
-        , icate = #{icate}
+        SET
+        icate = #{icate}
+        , nm = #{nm}
         , cnt = #{cnt}
         , iunit = #{iunit}
         WHERE iproduct = #{iproduct}
