@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @Tag(name ="일정")
 @RequestMapping("/refresh/plan")
