@@ -25,7 +25,7 @@ public class PdtController {
             "\"icate\": [-] 카테고리,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량,<br>" +
-            "\"iunit\": [1] 단위,<br>" +
+            "\"iunit\": [1] 단위 PK,<br>" +
             "\"w_iuser\": [1] 작성자 - 유저 PK<br>")
     public int insPdt(@RequestBody PdtInsDto dto) {
         return service.insPdt(dto);
