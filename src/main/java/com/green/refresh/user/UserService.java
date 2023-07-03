@@ -20,14 +20,20 @@ public class UserService {
     }
 
 
+    public List<UserProfileSelVo> selUserProfile(int iuser) {
+        UserProfileSelDto dto = new UserProfileSelDto();
+        dto.setIuser(iuser);
+        return mapper.selUserProfile(dto);
+    }
+
+    public List<UserProfileSelVo> selAllUser() {
+        return mapper.selAllUser();
+    }
+
     public List<UserSelVo> selUser(int iuser) {
         UserSelDto dto = new UserSelDto();
         dto.setIuser(iuser);
         return mapper.selUser(dto);
-    }
-
-    public List<UserSelVo> selAllUser() {
-        return mapper.selAllUser();
     }
 
 

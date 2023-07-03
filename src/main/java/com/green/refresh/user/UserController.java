@@ -1,12 +1,12 @@
 package com.green.refresh.user;
 
 import com.green.refresh.user.model.UserInsDto;
+import com.green.refresh.user.model.UserProfileSelVo;
 import com.green.refresh.user.model.UserSelVo;
 import com.green.refresh.user.model.UserUpdDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,19 +28,27 @@ public class UserController {
     }
 
     @GetMapping
-    @Operation(summary = "유저 프로필"
+    @Operation(summary = "유저 프로필 선택"
+            , description = "" +
+            "\"iuser\": 유저 PK값 <br>")
+    public List<UserProfileSelVo> selectUserProfile(@RequestParam int iuser) {
+        return service.selUserProfile(iuser);
+    }
+
+
+    @GetMapping("/all")
+    @Operation(summary = "전체 유저 프로필")
+    public List<UserProfileSelVo> selectAllUser() {
+        return service.selAllUser();
+    }
+
+    @GetMapping("/login")
+    @Operation(summary = "유저 선택"
             , description = "" +
             "\"iuser\": 유저 PK값 <br>")
     public List<UserSelVo> selectUser(@RequestParam int iuser) {
         return service.selUser(iuser);
     }
-
-    @GetMapping("/all")
-    @Operation(summary = "전체 유저 프로필")
-    public List<UserSelVo> selectAllUser() {
-        return service.selAllUser();
-    }
-
 
 
     @PatchMapping

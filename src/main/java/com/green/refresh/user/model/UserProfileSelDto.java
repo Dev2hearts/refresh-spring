@@ -3,8 +3,6 @@ package com.green.refresh.user.model;
 import lombok.Data;
 
 @Data
-public class UserSelVo {
+public class UserProfileSelDto {
     private int iuser;
-    private String nm;
-    private String pic;
 }

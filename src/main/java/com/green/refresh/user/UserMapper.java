@@ -8,8 +8,9 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     int insUser(UserInsDto dto);
+    List<UserProfileSelVo> selUserProfile(UserProfileSelDto dto);
+    List<UserProfileSelVo> selAllUser();
     List<UserSelVo> selUser(UserSelDto dto);
-    List<UserSelVo> selAllUser();
     int updUser(UserUpdDto dto);
     int delUser(UserDelDto dto);
 }

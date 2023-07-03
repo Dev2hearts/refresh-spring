@@ -11,7 +11,7 @@
     </insert>
 
 
-    <select id="selUser">
+    <select id="selUserProfile">
         SELECT A.iuser, C.igroup,  A.nm, A.birth, A.pic
         FROM t_user A
         INNER JOIN t_user_group B
@@ -22,6 +22,14 @@
         AND A.iuser = #{iuser}
         ORDER BY iuser
     </select>
+
+    <select id = "selUser">
+        SELECT iuser, nm, pic
+        FROM t_user
+        WHERE iuser = #{iuser}
+        AND del_yn = 0
+    </select>
+
 
     <select id="selAllUser">
         SELECT A.iuser, C.igroup,  A.nm, A.birth, A.pic
