@@ -30,6 +30,10 @@ public class UserService {
         return mapper.selAllUser();
     }
 
+    public List<UserProfileSelVo> selAllUserEG() {
+        return mapper.selAllUserEG();
+    }
+
     public List<UserSelVo> selUser(int iuser) {
         UserSelDto dto = new UserSelDto();
         dto.setIuser(iuser);

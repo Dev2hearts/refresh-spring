@@ -36,10 +36,16 @@ public class UserController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping("/all/{igroup}")
     @Operation(summary = "전체 유저 프로필")
     public List<UserProfileSelVo> selectAllUser() {
         return service.selAllUser();
+    }
+
+    @GetMapping("/all")
+    @Operation(summary = "전체 유저 프로필 (igroup값 없음)")
+    public List<UserProfileSelVo> selectAllUserEG() {
+        return service.selAllUserEG();
     }
 
     @GetMapping("/login")

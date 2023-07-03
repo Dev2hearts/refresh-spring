@@ -42,6 +42,13 @@
         ORDER BY iuser
     </select>
 
+    <select id="selAllUserEG">
+        SELECT iuser, nm, birth, pic
+        FROM t_user
+        WHERE del_yn = 0
+        ORDER BY iuser
+    </select>
+
 
     <update id="updUser">
         UPDATE t_user
