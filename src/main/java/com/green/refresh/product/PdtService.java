@@ -30,10 +30,10 @@ public class PdtService {
 
     }
 
-    public List<PdtSelVo> selPdt(int igroup, String createdAt) {
+    public List<PdtSelVo> selPdt(int igroup, int iplan) {
         PdtSelDto dto = new PdtSelDto();
         dto.setIgroup(igroup);
-        dto.setCreatedAt(createdAt);
+        dto.setIplan(iplan);
 //        return mapper.selPdt(dto);
         return mapper.selPdt(dto);
     }
