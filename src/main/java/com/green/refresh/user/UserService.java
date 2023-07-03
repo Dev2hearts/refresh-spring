@@ -30,7 +30,7 @@ public class UserService {
         return mapper.selAllUser();
     }
 
-    public List<UserProfileSelVo> selAllUserEG() {
+    public List<UserProfileEGSelVo> selAllUserEG() {
         return mapper.selAllUserEG();
     }
 

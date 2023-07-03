@@ -10,7 +10,7 @@ public interface UserMapper {
     int insUser(UserInsDto dto);
     List<UserProfileSelVo> selUserProfile(UserProfileSelDto dto);
     List<UserProfileSelVo> selAllUser();
-    List<UserProfileSelVo> selAllUserEG();
+    List<UserProfileEGSelVo> selAllUserEG();
     List<UserSelVo> selUser(UserSelDto dto);
     int updUser(UserUpdDto dto);
     int delUser(UserDelDto dto);

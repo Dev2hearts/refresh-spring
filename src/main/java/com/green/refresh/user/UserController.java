@@ -1,9 +1,6 @@
 package com.green.refresh.user;
 
-import com.green.refresh.user.model.UserInsDto;
-import com.green.refresh.user.model.UserProfileSelVo;
-import com.green.refresh.user.model.UserSelVo;
-import com.green.refresh.user.model.UserUpdDto;
+import com.green.refresh.user.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -44,7 +41,7 @@ public class UserController {
 
     @GetMapping("/all")
     @Operation(summary = "전체 유저 프로필 (igroup값 없음)")
-    public List<UserProfileSelVo> selectAllUserEG() {
+    public List<UserProfileEGSelVo> selectAllUserEG() {
         return service.selAllUserEG();
     }
 
