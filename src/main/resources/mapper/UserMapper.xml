@@ -15,7 +15,7 @@
     <insert id = "insUserGroup">
         INSERT INTO t_user_group
         SET igroup = #{igroup}
-        WHERE iuser = #{iuser}
+            , iuser = #{iuser}
     </insert>
 
     <select id="selUserProfile">
