@@ -7,7 +7,8 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    int insUser(UserInsDto dto);
+    int insUser(UserEntity entity);
+    int insUserGroup(UserEntity entity);
     List<UserProfileSelVo> selUserProfile(UserProfileSelDto dto);   //user 프로필보기
     List<UserProfileSelVo> selAllUser();
     List<UserProfileEGSelVo> selAllUserEG();

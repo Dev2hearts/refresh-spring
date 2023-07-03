@@ -16,11 +16,12 @@ public class UserController {
     private final UserService service;
 
 
-    @PostMapping
+
+    @PostMapping("/user")
     @Operation(summary = "유저 추가", description = "" +
             "\"nm\": [10] 유저 닉네임,<br>" +
             "\"birth\": [10] 생년월일<br>")
-    public int postUser(@RequestBody UserInsDto dto) {
+    public int postUserGroup(@RequestBody UserInsDto dto) {
         return service.insUser(dto);
     }
 

@@ -16,8 +16,15 @@ public class UserService {
     }
 
     public int insUser(UserInsDto dto) {
-        return mapper.insUser(dto);
+        UserEntity entity = new UserEntity();
+        entity.setNm(dto.getNm());
+        entity.setBirth(dto.getBirth());
+        mapper.insUser(entity);
+        entity.setIgroup(1);
+        mapper.insUserGroup(entity);
+        return 1;
     }
+
 
 
     public List<UserProfileSelVo> selUserProfile(int iuser) {
