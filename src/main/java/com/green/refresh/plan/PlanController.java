@@ -1,6 +1,7 @@
 package com.green.refresh.plan;
 
 import com.green.refresh.plan.model.PlanInsDto;
+import com.green.refresh.plan.model.PlanSelDto;
 import com.green.refresh.plan.model.PlanSelVo;
 import com.green.refresh.plan.model.PlanUpdDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,8 +46,10 @@ public class PlanController {
 
     @GetMapping
     @Operation(summary = "일정 리스트")
-    public List<PlanSelVo> getPlan() {
-        return service.selPlan();
+    public List<PlanSelVo> getPlan(@RequestParam int igroup) {
+        PlanSelDto dto = new PlanSelDto();
+        dto.setIgroup(igroup);
+        return service.selPlan(dto);
     }
 
 

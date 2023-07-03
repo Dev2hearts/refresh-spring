@@ -14,7 +14,9 @@
     <select id="selPlan">
         SELECT iplan, igroup, title, created_at createdAt, del_yn delYn
         FROM t_plan
+        WHERE igroup = #{igroup}
     </select>
+
 
     <update id="updPlan">
         UPDATE t_plan

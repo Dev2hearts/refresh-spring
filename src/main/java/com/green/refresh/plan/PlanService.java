@@ -1,9 +1,6 @@
 package com.green.refresh.plan;
 
-import com.green.refresh.plan.model.PlanEntity;
-import com.green.refresh.plan.model.PlanInsDto;
-import com.green.refresh.plan.model.PlanSelVo;
-import com.green.refresh.plan.model.PlanUpdDto;
+import com.green.refresh.plan.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +15,8 @@ public class PlanService {
         return mapper.insPlan(dto);
     }
 
-    public List<PlanSelVo> selPlan() {
-        return mapper.selPlan();
+    public List<PlanSelVo> selPlan(PlanSelDto dto) {
+        return mapper.selPlan(dto);
     }
 
     public int updPlan(PlanUpdDto dto) {
