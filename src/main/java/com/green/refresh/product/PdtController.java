@@ -21,7 +21,7 @@ public class PdtController {
     @PostMapping("/pdt")
     @Operation(summary = "아이템 추가"
             , description = "" +
-            "\"iplan\": [-] 그룹 PK,<br>" +
+            "\"iplan\": [-] 일정 PK,<br>" +
             "\"icate\": [-] 카테고리,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량,<br>" +
