@@ -45,7 +45,8 @@ public class PlanController {
 
 
     @GetMapping
-    @Operation(summary = "일정 리스트")
+    @Operation(summary = "일정 리스트", description =
+            "  \"igroup\": [-] PK값" )
     public List<PlanSelVo> getPlan(@RequestParam int igroup) {
         PlanSelDto dto = new PlanSelDto();
         dto.setIgroup(igroup);
