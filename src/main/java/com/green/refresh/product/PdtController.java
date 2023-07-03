@@ -55,7 +55,7 @@ public class PdtController {
     @PatchMapping("/pdt/finish")
     @Operation(summary = "아이템 구매 완료/취소"
             , description = "" +
-            "\"iproduct\": [-] 아이템 PK,<br>")
+            "\"iproduct\": [-] 아이템 PK<br>")
     public int finishPdt(@RequestParam int iproduct){
         return service.finishPdt(iproduct);
     }
@@ -63,7 +63,7 @@ public class PdtController {
     @DeleteMapping("/pdt")
     @Operation(summary = "아이템 삭제"
             , description = "" +
-            "\"iproduct\": [-] 아이템 PK,<br>")
+            "\"iproduct\": [-] 아이템 PK<br>")
     public int delPdt(@RequestParam int iproduct){
         return service.delPdt(iproduct);
     }
