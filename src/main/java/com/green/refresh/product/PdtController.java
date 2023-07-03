@@ -22,7 +22,7 @@ public class PdtController {
     @Operation(summary = "아이템 추가"
             , description = "" +
             "\"iplan\": [-] 일정 PK,<br>" +
-            "\"icate\": [-] 카테고리,<br>" +
+            "\"icate\": [-] 카테고리 PK,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량,<br>" +
             "\"iunit\": [1] 단위 PK,<br>" +
@@ -44,7 +44,7 @@ public class PdtController {
     @Operation(summary = "아이템 수정"
             , description = "" +
             "\"iproduct\": [-] 아이템 PK,<br>" +
-            "\"icate\": [-] 카테고리,<br>" +
+            "\"icate\": [-] 카테고리 PK,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량<br>" +
             "\"iunit\": [1] 단위 PK<br>")
