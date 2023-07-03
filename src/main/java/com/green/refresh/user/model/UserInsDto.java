@@ -6,5 +6,4 @@ import lombok.Data;
 public class UserInsDto {
     private String nm;
     private String birth;
-    private String pic;
 }
