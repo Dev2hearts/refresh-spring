@@ -19,7 +19,7 @@
     <update id="updPlan">
         UPDATE t_plan
         SET title = #{title}
-        , created_at = current_timestamp()
+        , created_at = #{createdAt}
         WHERE iplan = #{iplan}
     </update>
 
