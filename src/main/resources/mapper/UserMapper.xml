@@ -11,14 +11,10 @@
 
 
     <select id="selUserProfile">
-        SELECT A.iuser, C.igroup,  A.nm, A.birth, A.pic
-        FROM t_user A
-        INNER JOIN t_user_group B
-        ON A.iuser = B.iuser
-        INNER JOIN t_group C
-        ON B.igroup = C.igroup
+        SELECT iuser, nm, birth, pic
+        FROM t_user
         WHERE del_yn = 0
-        AND A.iuser = #{iuser}
+        AND iuser = #{iuser}
         ORDER BY iuser
     </select>
 
@@ -27,6 +23,14 @@
         FROM t_user
         WHERE iuser = #{iuser}
         AND del_yn = 0
+    </select>
+
+    <select id="selUserGroup">
+        SELECT A.igroup, B.nm
+        FROM t_user_group A
+        INNER JOIN t_group B
+        ON A.igroup = B.igroup
+        WHERE iuser = #{iuser}
     </select>
 
 

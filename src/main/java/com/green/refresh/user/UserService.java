@@ -40,6 +40,12 @@ public class UserService {
         return mapper.selUser(dto);
     }
 
+    public List<UserSelGroupVo> selUserGroup(int iuser) {
+        UserSelDto dto = new UserSelDto();
+        dto.setIuser(iuser);
+        return mapper.selUserGroup(dto);
+    }
+
 
     public int updUser(UserUpdDto dto) {
         return mapper.updUser(dto);

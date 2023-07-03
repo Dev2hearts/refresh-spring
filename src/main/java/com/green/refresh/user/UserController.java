@@ -53,6 +53,14 @@ public class UserController {
         return service.selUser(iuser);
     }
 
+    @GetMapping("/mygroup")
+    @Operation(summary = "그룹 선택"
+            , description = "" +
+            "\"iuser\": 유저 PK값 <br>")
+    public List<UserSelGroupVo> selectUserGroup(@RequestParam int iuser) {
+        return service.selUserGroup(iuser);
+    }
+
 
     @PatchMapping
     @Operation(summary = "유저 정보 수정", description = "" +
