@@ -18,8 +18,8 @@
         FROM t_product A
         JOIN t_plan B
         ON A.iplan = B.iplan
-        WHERE igroup = #{igroup}
-        AND created_at = #{createdAt}
+        WHERE B.igroup = #{igroup}
+        AND B.iplan = #{iplan}
         AND A.del_yn = 0
     </select>
 
