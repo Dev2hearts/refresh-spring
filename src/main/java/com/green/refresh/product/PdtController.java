@@ -47,7 +47,7 @@ public class PdtController {
             "\"icate\": [-] 카테고리,<br>" +
             "\"nm\": [20] 제품명,<br>" +
             "\"cnt\": [-] 수량<br>" +
-            "\"iunit\": [1] 단위,<br>")
+            "\"iunit\": [1] 단위 PK<br>")
     public int patchPdt(@RequestBody PdtUpdDto dto) {
         return service.updPdt(dto);
     }
