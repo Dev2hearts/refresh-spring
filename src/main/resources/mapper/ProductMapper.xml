@@ -14,10 +14,16 @@
     </insert>
 
     <select id="selPdt" resultType="PdtSelVo">
-        SELECT A.iproduct, A.icate, A.nm, A.cnt, A.iunit, A.w_iuser wIuser, A.finish_yn finishYn
+        SELECT A.iproduct, A.icate, C.nm cateNm, A.nm, A.cnt, A.iunit, D.nm unitNm, E.nm wUserNm, A.finish_yn finishYn
         FROM t_product A
-        JOIN t_plan B
+        INNER JOIN t_plan B
         ON A.iplan = B.iplan
+        INNER JOIN t_category C
+        ON A.icate = C.icate
+        INNER JOIN t_unit D
+        ON A.iunit = D.iunit
+        INNER JOIN t_user E
+        ON A.w_iuser = E.iuser
         WHERE B.igroup = #{igroup}
         AND B.iplan = #{iplan}
         AND A.del_yn = 0
