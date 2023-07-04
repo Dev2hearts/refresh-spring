@@ -7,21 +7,19 @@
         INSERT INTO t_plan
         SET igroup = #{igroup}
         , iuser = #{iuser}
-        , title = #{title}
         , created_at = #{createdAt}
     </insert>
 
     <select id="selPlan">
-        SELECT iplan, igroup, title, created_at createdAt, del_yn delYn
+        SELECT iplan, igroup, created_at createdAt
         FROM t_plan
         WHERE igroup = #{igroup}
+        AND del_yn = 0
     </select>
-
 
     <update id="updPlan">
         UPDATE t_plan
-        SET title = #{title}
-        , created_at = #{createdAt}
+        SET created_at = #{createdAt}
         WHERE iplan = #{iplan}
     </update>
 

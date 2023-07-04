@@ -6,6 +6,5 @@ import lombok.Data;
 public class PlanInsDto {
     private int igroup;
     private int iuser;
-    private String title;
     private String createdAt;
 }

@@ -35,7 +35,6 @@ public class PlanController {
     @Operation(summary = "일정등록", description =
             "  \"igroup\": [-] PK값,</br>" +
             "  \"iuser\": [-] PK값,</br>" +
-            "  \"title\": [20] 일정 제목 입력,</br>" +
             " \"created_at \" : \" [10] 해당 날짜 입력 ex)2023-07-07</br>"
 
             )
@@ -59,7 +58,6 @@ public class PlanController {
     @PutMapping("/{iplan}")
     @Operation(summary = "일정수정", description =
             "  \"iplan\": [-] 수정할 PK값, </br>" +
-            "  \"title\":  [20] 제목 수정할 내용 입력, </br>" +
             " \"createdAt\" : [10] 수정할 날짜 입력"
             )
     public int putPlan(@RequestBody PlanUpdDto dto) {
