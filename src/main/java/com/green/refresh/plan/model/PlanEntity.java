@@ -6,6 +6,7 @@ import lombok.Data;
 public class PlanEntity {
     private int iplan;
     private int igroup;
+    private int iuser;
     private String createdAt;
     private int delYn;
 }

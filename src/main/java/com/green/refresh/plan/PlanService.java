@@ -12,7 +12,16 @@ public class PlanService {
     private final PlanMapper mapper;
 
     public int insPlan(PlanInsDto dto) {
-        return mapper.insPlan(dto);
+        PlanEntity entity = new PlanEntity();
+        entity.setIgroup(dto.getIgroup());
+        entity.setIuser(dto.getIuser());
+        entity.setCreatedAt(dto.getCreatedAt());
+
+        int result = mapper.insPlan(entity);
+        if (result == 1) {
+            return entity.getIplan();
+        }
+        return result;
     }
 
     public List<PlanSelVo> selPlan(PlanSelDto dto) {
