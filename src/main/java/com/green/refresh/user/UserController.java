@@ -4,7 +4,9 @@ import com.green.refresh.user.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 @CrossOrigin
@@ -34,7 +36,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/all/{igroup}")
+    @GetMapping("/all/igroup")
     @Operation(summary = "전체 유저 프로필")
     public List<UserProfileSelVo> selectAllUser() {
         return service.selAllUser();
@@ -63,12 +65,23 @@ public class UserController {
     }
 
 
-    @PatchMapping
+    @PatchMapping("/user update")
     @Operation(summary = "유저 정보 수정", description = "" +
             "\"nm\": [10] 유저 닉네임,<br>" +
             "\"birth\": [10] 생년월일<br>")
     public int UpdInfoUser(@RequestBody UserUpdDto dto) {
         return service.updUser(dto);
+    }
+
+
+    @PatchMapping(name="/pic", consumes={MediaType.MULTIPART_FORM_DATA_VALUE})
+    @Operation(summary = "유저 프로필 사진 추가", description = "" +
+            "\"iuser\": [-] 유저 PK값 <br>" +
+            "\"pic\": [-] 사진파일<br>")
+    public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser) {
+        UserPicDto dto = new UserPicDto();
+        dto.setIuser(iuser);
+        return service.updUserPic(pic,dto);
     }
 
 

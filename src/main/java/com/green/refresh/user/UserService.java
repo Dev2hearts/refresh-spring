@@ -1,14 +1,21 @@
 package com.green.refresh.user;
 
 import com.green.refresh.user.model.*;
+import com.green.refresh.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 
 @Service
 public class UserService {
     private final UserMapper mapper;
+
+    @Value("${file.dir}")
+    private String fileDir;
 
     @Autowired
     public UserService(UserMapper mapper) {
@@ -56,6 +63,40 @@ public class UserService {
 
     public int updUser(UserUpdDto dto) {
         return mapper.updUser(dto);
+    }
+
+
+    public int updUserPic(MultipartFile pic, UserPicDto dto) {
+
+        String centerPath = String.format("user/%d", dto.getIuser());
+        String dicPath = String.format("%s/%s", fileDir, centerPath);
+
+        File dic = new File(dicPath);
+        if (!dic.exists()) {     //해당하는 폴더가 있는지 확인 가능
+            dic.mkdirs();
+        }
+
+        String originFileName = pic.getOriginalFilename();
+        String savedFileName = FileUtils.makeRandomFileNm(originFileName);
+        String savedFilePath = String.format("%s/%s", centerPath, savedFileName);
+        String targetPath = String.format("%s/%s", fileDir, savedFilePath);
+        File target = new File(targetPath);
+        try {
+            pic.transferTo(target);
+        }catch (Exception e) {
+            return 0;
+        }
+        dto.setPic(savedFilePath);
+        try {
+            int result = mapper.updUserPic(dto);
+            if(result == 0) {
+                throw new Exception("프로필 사진을 등록할 수 없습니다.");
+            }
+        } catch (Exception e) {
+            target.delete();
+            return 0;
+        }
+        return 1;
     }
 
     public int delUser(int iuser) {
