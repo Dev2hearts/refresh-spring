@@ -28,8 +28,8 @@ public class UserService {
         entity.setBirth(dto.getBirth());
         mapper.insUser(entity);
         entity.setIgroup(1);
-        mapper.insUserGroup(entity);
-        return 1;
+        return mapper.insUserGroup(entity);
+
     }
 
 
@@ -67,12 +67,11 @@ public class UserService {
 
 
     public int updUserPic(MultipartFile pic, UserPicDto dto) {
-
         String centerPath = String.format("user/%d", dto.getIuser());
         String dicPath = String.format("%s/%s", fileDir, centerPath);
 
         File dic = new File(dicPath);
-        if (!dic.exists()) {     //해당하는 폴더가 있는지 확인 가능
+        if (!dic.exists()) {
             dic.mkdirs();
         }
 

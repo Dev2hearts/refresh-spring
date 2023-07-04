@@ -70,7 +70,7 @@
 
     <update id="updUserPic">
         UPDATE t_user
-        SET main_pic = #{mainPic}
+        SET pic = #{pic}
         WHERE iuser = #{iuser}
     </update>
 
