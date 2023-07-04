@@ -19,7 +19,7 @@ springdoc:
     path: /swagger.html
     operations-sorter: method
 file:
-  dir: D:/download/board3
+  dir: D:/download/refresh
 
 
 
