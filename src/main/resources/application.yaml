@@ -18,4 +18,5 @@ springdoc:
   swagger-ui:
     path: /swagger.html
 file:
-  dir: D:/download/board3
+  dir: D:/download/refresh
+
