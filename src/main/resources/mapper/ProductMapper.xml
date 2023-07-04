@@ -27,6 +27,7 @@
         WHERE B.igroup = #{igroup}
         AND B.iplan = #{iplan}
         AND A.del_yn = 0
+        ORDER BY buy_at DESC
     </select>
 
     <update id="updPdt">
