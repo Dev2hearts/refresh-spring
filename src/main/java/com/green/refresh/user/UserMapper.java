@@ -15,6 +15,6 @@ public interface UserMapper {
     List<UserSelVo> selUser(UserSelDto dto);    //user 선택
     List<UserSelGroupVo> selUserGroup(UserSelDto dto);   //group 선택
     int updUser(UserUpdDto dto);
-    int updUserPic(UserPicDto dto);     //user 사진 추가
+    int updUserPic(UserPicDto dto);     //사진 추가
     int delUser(UserDelDto dto);
 }
