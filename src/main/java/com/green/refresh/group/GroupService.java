@@ -31,8 +31,8 @@ public class GroupService {
 
 
     public int updGroupPic(MultipartFile pic, GroupPicDto dto) {
-        String centerPath = String.format("user/%d", dto.getIgroup());
-        String dicPath = String.format("%s/%s", fileDir, centerPath);
+        String centerPath = String.format("group/%d", dto.getIgroup());
+        String dicPath = String.format("%s/%s", FileUtils.getAbsolutePath(fileDir), centerPath);
 
         File dic = new File(dicPath);
         if (!dic.exists()) {
@@ -42,7 +42,7 @@ public class GroupService {
         String originFileName = pic.getOriginalFilename();
         String savedFileName = FileUtils.makeRandomFileNm(originFileName);
         String savedFilePath = String.format("%s/%s", centerPath, savedFileName);
-        String targetPath = String.format("%s/%s", fileDir, savedFilePath);
+        String targetPath = String.format("%s/%s", FileUtils.getAbsolutePath(fileDir), savedFilePath);
         File target = new File(targetPath);
         try {
             pic.transferTo(target);
@@ -53,7 +53,7 @@ public class GroupService {
         try {
             int result = mapper.updGroupPic(dto);
             if(result == 0) {
-                throw new Exception("프로필 사진을 등록할 수 없습니다.");
+                throw new Exception("그룹 프로필 사진을 등록할 수 없습니다.");
             }
         } catch (Exception e) {
             target.delete();

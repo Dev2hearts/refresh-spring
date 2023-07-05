@@ -42,9 +42,9 @@ public class GroupController {
     @Operation(summary = "그룹 프로필 사진 추가", description = "" +
             "\"igroup\": [-] 그룹 PK값 <br>" +
             "\"pic\": [-] 사진파일<br>")
-    public int patchPicGroup(@RequestPart MultipartFile pic, @RequestParam int iuser) {
+    public int patchPicGroup(@RequestPart MultipartFile pic, @RequestParam int igroup) {
         GroupPicDto dto = new GroupPicDto();
-        dto.setIgroup(iuser);
+        dto.setIgroup(igroup);
         return service.updGroupPic(pic,dto);
     }
 
