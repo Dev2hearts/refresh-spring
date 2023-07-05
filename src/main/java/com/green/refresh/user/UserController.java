@@ -38,7 +38,7 @@ public class UserController {
 
     @GetMapping("/all/igroup")
     @Operation(summary = "전체 유저 프로필")
-    public List<UserProfileSelVo> selectAllUser() {
+    public List<UserSelVo> selectAllUser() {
         return service.selAllUser();
     }
 

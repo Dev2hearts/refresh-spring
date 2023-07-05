@@ -40,7 +40,7 @@ public class UserService {
         return mapper.selUserProfile(dto);
     }
 
-    public List<UserProfileSelVo> selAllUser() {
+    public List<UserSelVo> selAllUser() {
         return mapper.selAllUser();
     }
 

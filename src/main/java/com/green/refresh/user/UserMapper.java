@@ -10,7 +10,7 @@ public interface UserMapper {
     int insUser(UserEntity entity);
     int insUserGroup(UserEntity entity);
     List<UserProfileSelVo> selUserProfile(UserProfileSelDto dto);   //user 프로필보기
-    List<UserProfileSelVo> selAllUser();
+    List<UserSelVo> selAllUser();
     List<UserProfileEGSelVo> selAllUserEG();
     List<UserSelVo> selUser(UserSelDto dto);    //user 선택
     List<UserSelGroupVo> selUserGroup(UserSelDto dto);   //group 선택
