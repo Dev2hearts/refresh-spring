@@ -27,7 +27,8 @@
         WHERE B.igroup = #{igroup}
         AND B.iplan = #{iplan}
         AND A.del_yn = 0
-        ORDER BY buy_at DESC
+        ORDER BY A.finish_yn
+        , A.buy_at DESC
     </select>
 
     <update id="updPdt">
@@ -37,6 +38,7 @@
         , nm = #{nm}
         , cnt = #{cnt}
         , iunit = #{iunit}
+        , buy_at = current_timestemp()
         WHERE iproduct = #{iproduct}
     </update>
 
@@ -46,6 +48,7 @@
         </selectKey>
         UPDATE t_product
         SET finish_yn = 1 - finish_yn
+        , buy_at = current_timestemp()
         WHERE iproduct = #{iproduct}
     </update>
 
