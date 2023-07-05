@@ -1,5 +1,6 @@
 package com.green.refresh.utils;
 
+import java.nio.file.Paths;
 import java.util.UUID;
 
 public class FileUtils {
@@ -21,5 +22,10 @@ public class FileUtils {
         String fullName = uuid+ext;
 
         return fullName;
+    }
+
+
+    public static String getAbsolutePath(String src) {
+        return Paths.get(src).toFile().getAbsolutePath();
     }
 }

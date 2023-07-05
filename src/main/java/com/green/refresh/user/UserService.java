@@ -14,7 +14,7 @@ import java.util.List;
 public class UserService {
     private final UserMapper mapper;
 
-    @Value("${file.dir}")
+    @Value("/home/download")
     private String fileDir;
 
     @Autowired
@@ -68,7 +68,7 @@ public class UserService {
 
     public int updUserPic(MultipartFile pic, UserPicDto dto) {
         String centerPath = String.format("user/%d", dto.getIuser());
-        String dicPath = String.format("%s/%s", fileDir, centerPath);
+        String dicPath = String.format("%s/%s", FileUtils.getAbsolutePath(fileDir), centerPath);
 
         File dic = new File(dicPath);
         if (!dic.exists()) {

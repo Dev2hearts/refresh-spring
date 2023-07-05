@@ -23,4 +23,10 @@
         ON B.iuser = C.iuser
     </select>
 
+    <update id="updGroupPic">
+        UPDATE t_group
+        SET pic = #{pic}
+        WHERE igroup = #{igroup}
+    </update>
+
 </mapper>
