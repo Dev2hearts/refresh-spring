@@ -9,5 +9,4 @@ public class PdtUpdDto {
     private String nm;
     private int cnt;
     private int iunit;
-    private String buyAt;
 }

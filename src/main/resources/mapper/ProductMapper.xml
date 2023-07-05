@@ -38,7 +38,7 @@
         , nm = #{nm}
         , cnt = #{cnt}
         , iunit = #{iunit}
-        , buy_at = current_timestemp()
+        , buy_at = current_timestamp()
         WHERE iproduct = #{iproduct}
     </update>
 
@@ -48,7 +48,7 @@
         </selectKey>
         UPDATE t_product
         SET finish_yn = 1 - finish_yn
-        , buy_at = current_timestemp()
+        , buy_at = current_timestamp()
         WHERE iproduct = #{iproduct}
     </update>
 

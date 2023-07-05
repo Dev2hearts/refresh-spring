@@ -10,7 +10,7 @@ public interface PdtMapper {
     int insPdt(PdtInsDto dto);
     //    List<PdtSelVo> selPdt(PdtSelDto dto);
     List<PdtSelVo> selPdt(PdtSelDto dto);
-    int updPdt(PdtUpdDto dto);
+    int updPdt(PdtEntity entity);
     int finishPdt(PdtEntity entity);
     int delPdt(PdtEntity entity);
 }

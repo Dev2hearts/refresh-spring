@@ -23,8 +23,13 @@ public class PdtService {
     }
 
     public int updPdt(PdtUpdDto dto) {
-
-        return mapper.updPdt(dto);
+        PdtEntity entity = new PdtEntity();
+        entity.setIproduct(dto.getIproduct());
+        entity.setIcate(dto.getIcate());
+        entity.setNm(dto.getNm());
+        entity.setCnt(dto.getCnt());
+        entity.setIunit(dto.getIunit());
+        return mapper.updPdt(entity);
     }
 
     public int finishPdt(int iproduct) {
