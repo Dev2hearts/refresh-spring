@@ -38,11 +38,11 @@ public class GroupController {
 
 
 
-    @PatchMapping(name="/pic", consumes={MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PatchMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "그룹 프로필 사진 추가", description = "" +
-            "\"igroup\": [-] 그룹 PK값 <br>" +
+            "\"iuser\": [-] 그룹 PK값 <br>" +
             "\"pic\": [-] 사진파일<br>")
-    public int patchPicGroup(@RequestPart MultipartFile pic, @RequestParam int igroup) {
+    public String patchPicGroup(@RequestPart MultipartFile pic, @RequestParam int igroup) {
         GroupPicDto dto = new GroupPicDto();
         dto.setIgroup(igroup);
         return service.updGroupPic(pic,dto);

@@ -3,6 +3,7 @@ package com.green.refresh.group;
 import com.green.refresh.group.model.GroupPicDto;
 import com.green.refresh.group.model.GroupSelDto;
 import com.green.refresh.group.model.GroupSelVo;
+import com.green.refresh.user.model.UserPicDto;
 import com.green.refresh.utils.FileUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +31,9 @@ public class GroupService {
     }
 
 
-    public int updGroupPic(MultipartFile pic, GroupPicDto dto) {
+    public String updGroupPic(MultipartFile pic, GroupPicDto dto) {
+
+        String temp = "0";
         String centerPath = String.format("group/%d", dto.getIgroup());
         String dicPath = String.format("%s/%s", FileUtils.getAbsolutePath(fileDir), centerPath);
 
@@ -47,18 +50,18 @@ public class GroupService {
         try {
             pic.transferTo(target);
         }catch (Exception e) {
-            return 0;
+            return temp;
         }
         dto.setPic(savedFilePath);
         try {
             int result = mapper.updGroupPic(dto);
-            if(result == 0) {
+            if(result == Integer.parseInt(temp)) {
                 throw new Exception("그룹 프로필 사진을 등록할 수 없습니다.");
             }
         } catch (Exception e) {
             target.delete();
-            return 0;
+            return temp;
         }
-        return 1;
+        return savedFilePath;
     }
 }
