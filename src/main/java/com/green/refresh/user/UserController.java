@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @Tag(name ="유저")
 @RequestMapping("/api/refresh/user")
@@ -75,11 +75,11 @@ public class UserController {
     }
 
 
-    @PatchMapping
+    @PatchMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "유저 프로필 사진 추가", description = "" +
             "\"iuser\": [-] 유저 PK값 <br>" +
             "\"pic\": [-] 사진파일<br>")
-    public int patchPicUser(MultipartFile pic, @RequestParam int iuser) {
+    public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser) {
         UserPicDto dto = new UserPicDto();
         dto.setIuser(iuser);
         return service.updUserPic(pic,dto);

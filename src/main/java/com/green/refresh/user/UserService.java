@@ -67,6 +67,8 @@ public class UserService {
 
 
     public int updUserPic(MultipartFile pic, UserPicDto dto) {
+
+        String temp = "0";
         String centerPath = String.format("user/%d", dto.getIuser());
         String dicPath = String.format("%s/%s", FileUtils.getAbsolutePath(fileDir), centerPath);
 
