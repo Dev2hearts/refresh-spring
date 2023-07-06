@@ -6,6 +6,7 @@ import lombok.Data;
 public class GroupSelVo {
     private int igroup;
     private int iuser;
+    private String pic;
     private String Unm;
     private String Gnm;
 }

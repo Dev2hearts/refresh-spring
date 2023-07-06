@@ -5,7 +5,7 @@
 <mapper namespace="com.green.refresh.group.GroupMapper">
 
     <select id="selGroup">
-        SELECT A.igroup, A.nm Gnm, C.nm Unm, C.iuser
+        SELECT A.igroup, A.pic Gpic, A.nm Gnm, C.nm Unm, C.iuser
         FROM t_group A
         INNER JOIN t_user_group B
         ON A.igroup = B.igroup
@@ -15,7 +15,7 @@
     </select>
 
     <select id="selAllGroup">
-        SELECT A.igroup, A.nm Gnm, C.nm Unm, C.iuser
+        SELECT A.igroup, A.pic Gpic, A.nm Gnm, C.nm Unm, C.iuser
         FROM t_group A
         INNER JOIN t_user_group B
         ON A.igroup = B.igroup
