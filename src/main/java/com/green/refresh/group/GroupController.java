@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@CrossOrigin
+
 @RestController
 @Tag(name ="그룹")
 @RequestMapping("/api/refresh/group")

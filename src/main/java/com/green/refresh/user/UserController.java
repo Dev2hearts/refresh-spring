@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
-@CrossOrigin
+
 @RestController
 @Tag(name ="유저")
 @RequestMapping("/api/refresh/user")

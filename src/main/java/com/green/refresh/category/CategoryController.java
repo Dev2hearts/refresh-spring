@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin
+
 @Tag(name ="카테고리 리스트")
 @RequiredArgsConstructor
 @RestController
