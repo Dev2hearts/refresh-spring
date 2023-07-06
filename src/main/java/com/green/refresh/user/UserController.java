@@ -79,7 +79,7 @@ public class UserController {
     @Operation(summary = "유저 프로필 사진 추가", description = "" +
             "\"iuser\": [-] 유저 PK값 <br>" +
             "\"pic\": [-] 사진파일<br>")
-    public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser) {
+    public String patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser) {
         UserPicDto dto = new UserPicDto();
         dto.setIuser(iuser);
         return service.updUserPic(pic,dto);

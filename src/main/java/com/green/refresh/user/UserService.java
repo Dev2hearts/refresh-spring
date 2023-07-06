@@ -66,7 +66,7 @@ public class UserService {
     }
 
 
-    public int updUserPic(MultipartFile pic, UserPicDto dto) {
+    public String updUserPic(MultipartFile pic, UserPicDto dto) {
 
         String temp = "0";
         String centerPath = String.format("user/%d", dto.getIuser());
@@ -85,19 +85,19 @@ public class UserService {
         try {
             pic.transferTo(target);
         }catch (Exception e) {
-            return 0;
+            return temp;
         }
         dto.setPic(savedFilePath);
         try {
             int result = mapper.updUserPic(dto);
-            if(result == 0) {
+            if(result == Integer.parseInt(temp)) {
                 throw new Exception("프로필 사진을 등록할 수 없습니다.");
             }
         } catch (Exception e) {
             target.delete();
-            return 0;
+            return temp;
         }
-        return 1;
+        return savedFilePath;
     }
 
     public int delUser(int iuser) {
