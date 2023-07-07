@@ -66,7 +66,7 @@ public class UserController {
     }
 
 
-    @PatchMapping("/user update")
+    @PatchMapping("/userupdate")
     @Operation(summary = "유저 정보 수정", description = "" +
             "\"nm\": [10] 유저 닉네임,<br>" +
             "\"birth\": [10] 생년월일<br>")
