@@ -14,7 +14,7 @@
     </insert>
 
     <select id="selPdt" resultType="PdtSelVo">
-        SELECT A.iproduct, A.icate, C.nm cateNm, A.nm, A.cnt, A.iunit, D.nm unitNm, E.nm wUserNm, A.finish_yn finishYn
+        SELECT A.iproduct, C.nm cateNm, A.nm, A.cnt, D.nm unitNm, E.nm wUserNm, A.finish_yn finishYn
         FROM t_product A
         INNER JOIN t_plan B
         ON A.iplan = B.iplan
