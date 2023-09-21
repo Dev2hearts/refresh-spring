@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: root
-    jdbc-url: jdbc:mariadb://svc.sel5.cloudtype.app:31127
+    jdbc-url: jdbc:mariadb://svc.sel5.cloudtype.app:31127/refresh
 # mybatis
 mybatis:
   type-aliases-package: com.green.refresh
