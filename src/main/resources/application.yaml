@@ -1,4 +1,4 @@
-# DB
+DB
 spring:
   servlet:
     multipart:
@@ -6,9 +6,9 @@ spring:
       max-request-size: 12MB
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    username: team_g
-    password: green502
-    jdbc-url: jdbc:mariadb://192.168.0.144:3306/team_g
+    username: root
+    password: root
+    jdbc-url: jdbc:mariadb://svc.sel5.cloudtype.app:31127
 # mybatis
 mybatis:
   type-aliases-package: com.green.refresh
