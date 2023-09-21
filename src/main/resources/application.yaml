@@ -1,26 +1,22 @@
-DB
+# DB
 spring:
-  servlet:
-    multipart:
-      max-file-size: 3MB
-      max-request-size: 12MB
-  datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: root
-    password: root
-    jdbc-url: jdbc:mariadb://svc.sel5.cloudtype.app:31127/refresh
+    servlet:
+        multipart:
+            max-file-size: 3MB
+            max-request-size: 12MB
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        username: root
+        password: root
+        jdbc-url: jdbc:mariadb://svc.sel5.cloudtype.app:31127/refresh
 # mybatis
 mybatis:
-  type-aliases-package: com.green.refresh
-  mapper-locations: mapper/**/*.xml
+    type-aliases-package: com.green.refresh
+    mapper-locations: mapper/**/*.xml
 # swagger
 springdoc:
-  swagger-ui:
-    path: /swagger.html
-    operations-sorter: method
+    swagger-ui:
+        path: /swagger.html
+        operations-sorter: method
 file:
-  dir: /home/download
-
-
-
-
+    dir: /home/download
